@@ -96,9 +96,11 @@ def GetSeconds(timestring):
 
 # function to extract a person from the given csvfile
 # csvfile = the location of the inputfile from which a person gets extracted
-# needperson = a number that will try to get that person returns nothing if person is not in file
+# needperson = a number that will try to get that person returns nothing
+# if person is not in file
 
-# returns a csvfile with the given person + the lenght of the file in seconds + the number of the selected person
+# returns a csvfile with the given person + the lenght of the file in
+# seconds + the number of the selected person
 def GetPerson(csvfile, needperson):
     df = pd.read_csv(csvfile)
     if(len(df) == 0):
@@ -171,7 +173,8 @@ def CalcDelta(pos, timeframe, deltatime):
 # Function to get the highest value from input x that occurs 'times' times.
 # x = a list with values.
 # times = the minimum number of times a match has to occur to return a value.
-# higher = a bit that if False only checks for exact matches OTHERWISE it also check for higher values.
+# higher = a bit that if False only checks for exact matches OTHERWISE it
+# also check for higher values.
 def GetHeight(x, times, higher):
     blacklist = []
     j = 0
@@ -209,7 +212,8 @@ def GetHeight(x, times, higher):
 # Function to get the lowest value from input x that occurs 'times' times.
 # x = a list with values.
 # times = the minimum number of times a match has to occur to return a value.
-# higher = a bit that if False only checks for exact matches OTHERWISE it also check for lower values.
+# higher = a bit that if False only checks for exact matches OTHERWISE it
+# also check for lower values.
 def GetLow(x, times, lower):
     blacklist = []
     j = 0
