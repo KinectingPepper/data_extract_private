@@ -17,7 +17,7 @@ def cleancsv(saveloc, csvfile, oef):
         starttime = basics.GetSeconds(csvfile.time[0])
         endtime = basics.GetSeconds(csvfile.time[len(csvfile) - 1])
         T = endtime - starttime
-        file = csvfile
+        file_ = csvfile
         person = 0
     else:
         print('no correct input')
@@ -485,7 +485,7 @@ def GetPart(csvfile, oef, nr):
         starttime = basics.GetSeconds(csvfile.time[0])
         endtime = basics.GetSeconds(csvfile.time[len(csvfile) - 1])
         T = endtime - starttime
-        file = csvfile
+        file_ = csvfile
         person = 0
     else:
         print('invalid input')

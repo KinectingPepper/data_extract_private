@@ -116,8 +116,8 @@ def GetPerson(csvfile, needperson):
             return
     done = False
     while (not done):
-        file = df[df.trackingId == check[selectedhuman - 1]]
-        file = file.reset_index(drop=True)
+        file_ = df[df.trackingId == check[selectedhuman - 1]]
+        file_ = file.reset_index(drop=True)
         startframe = file.frameNum[0]
         starttime = GetSeconds(file.time[0])
         endframe = file.frameNum[len(file) - 1]
