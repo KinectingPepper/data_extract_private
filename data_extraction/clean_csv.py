@@ -23,9 +23,9 @@ def cleancsv(saveloc, csvfile, oef):
         print('no correct input')
         return
 
-    handL = file[file.jointName == 'HandLeft']
-    handR = file[file.jointName == 'HandRight']
-    joints = len(file.jointName.unique())
+    handL = file[file_.jointName == 'HandLeft']
+    handR = file[file_.jointName == 'HandRight']
+    joints = len(file_.jointName.unique())
     handL = handL.reset_index(drop=True)
     handR = handR.reset_index(drop=True)
     xl = basics.GetJoint(file, 'x', 'HandLeft')
@@ -141,11 +141,11 @@ def cleancsv(saveloc, csvfile, oef):
 
     note *= deltatime
     note = int(note)
-    T1 = file.time[0]
+    T1 = file_.time[0]
     T1 = basics.NewTime(T1, note)
     c = -1
-    for x in range(0, len(file.time)):
-        if((T1[:8] in file.time[x])):
+    for x in range(0, len(file_.time)):
+        if((T1[:8] in file_.time[x])):
             c = x
             break
 
@@ -356,7 +356,7 @@ def compare(files, saveloc):
     for i in range(0, len(files)):
         file, t, person = basics.GetPerson(files[i], -1)
         assert(len(file) > 0)
-        handL = file[file.jointName == 'HandLeft']
+        handL = file[file_.jointName == 'HandLeft']
         if(len(handL) == 0):
             continue
         handL = handL.reset_index(drop=True)
@@ -491,7 +491,7 @@ def GetPart(csvfile, oef, nr):
         print('invalid input')
         return
     # Get Left and Right hand
-    joints = len(file.jointName.unique())
+    joints = len(file_.jointName.unique())
 
     if(oef != 3):
         l = basics.GetJoint(file, 'y', 'HandLeft')

@@ -117,11 +117,11 @@ def GetPerson(csvfile, needperson):
     done = False
     while (not done):
         file_ = df[df.trackingId == check[selectedhuman - 1]]
-        file_ = file.reset_index(drop=True)
-        startframe = file.frameNum[0]
-        starttime = GetSeconds(file.time[0])
-        endframe = file.frameNum[len(file) - 1]
-        endtime = GetSeconds(file.time[len(file) - 1])
+        file_ = file_.reset_index(drop=True)
+        startframe = file_.frameNum[0]
+        starttime = GetSeconds(file_.time[0])
+        endframe = file_.frameNum[len(file) - 1]
+        endtime = GetSeconds(file_.time[len(file) - 1])
         deltaframe = endframe - startframe
         deltatime = endtime - starttime
         fps = 29
@@ -139,7 +139,7 @@ def GetPerson(csvfile, needperson):
                 print(csvfile)
                 print("warning: recording under 10 seconds.")
         done = True
-    #accuracy = file[file.trackState=="Tracked"]
+    #accuracy = file[file_.trackState=="Tracked"]
     # print(str((len(accuracy)/len(file))*100)+'%')
     return file, deltatime, selectedhuman
 
